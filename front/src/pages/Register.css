@@ -1,0 +1,25 @@
+.register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+.register form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.button {
+    gap: 0.2rem;
+}
+
+.register a {
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+

@@ -6,7 +6,7 @@ const { setError } = require("../../helpers/errors");
 
 const getAllAdmins = async (req, res, next) => {
     try {
-        const admins = await Admin.find()
+        const admins = await Admin.find().populate("usuarios citas");
         return res.status(200).json({
             message: 'All Admins',
             admins
@@ -20,7 +20,7 @@ const adminById = async (req, res, next) => {
     try {
         const { id } = req.params;
         if (id != req.admin.id) return next(setError(403, "Forbidden"));
-        const admin = await Admin.findById(id);
+        const admin = await Admin.findById(id).populate("usuarios citas");
         if (!admin) return next(setError(404, "Admin not found"));
         return res.status(200).json(admin);
     } catch (error) {

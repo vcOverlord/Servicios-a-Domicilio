@@ -7,6 +7,8 @@ const schema = new Schema ({
     name: {type: String, required: true},
     email: {type: String, required: true},
     password: {type: String, required: true},
+    usuario: [{ type: Schema.Types.ObjectId, ref:"usuarios"}],
+    cita: [{ type: Schema.Types.ObjectId, ref:"citas"}],
     
 });
 

@@ -7,6 +7,8 @@ const schema = new Schema ({
     name: {type: String, required: true},
     date: {type: String, required: true},
     time: {type: Number, required: true},
+    usuario: [{ type: Schema.Types.ObjectId, ref:"usuarios"}],
+    admin: [{ type: Schema.Types.ObjectId, ref:"admins"}],
 },
 
 {

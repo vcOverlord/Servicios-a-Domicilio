@@ -1,6 +1,13 @@
+import { Link } from "react-router-dom";
+import "./Availability.css";
+
+
 const Availability = () => {
     return (
-    <div>Disponibilidad</div>
+    <section className="availability">
+        <h2>Disponibilidad</h2>
+        <Link to="/register">Ir a register</Link>
+        </section>
     )
 };
 

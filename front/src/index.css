@@ -6,11 +6,18 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+
+  
 }
 
 a{
   text-decoration: none;
-  color: inherit;
+ 
+}
+
+li {
+
+  list-style-type: none;
 }
 
 
@@ -24,7 +31,7 @@ body{
 
   font-family: 'Montserrat', sans-serif;
   background-color: white;
-  color: whitesmoke;
+  
 }
 
 h1,h2 {
@@ -52,3 +59,15 @@ a:hover {
 strong {
   color: #4ac5e3;
 }
+
+button {
+  outline: none;
+  border: none;
+  padding: 0.3rem 1rem;
+  background-color: #60d6f3 ;
+  border-radius: 0.8rem;
+  font-weight: bold;
+  color: white
+  
+}
+

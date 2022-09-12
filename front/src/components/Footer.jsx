@@ -2,7 +2,7 @@ import "./Footer.css";
 
 const Footer = () => {
     return (
-    <div><p>Gracias por su visita</p></div>
+    <footer><p>Tu cuerpo es el lugar donde vas a vivir siempre, ¡cuídalo!</p></footer>
     )
 };
 

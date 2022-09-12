@@ -1,23 +1,38 @@
 header {
-    height: 10vh;
+    height: 15vh;
+    
 }
 
 header nav {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: center;
     gap: rem;
-    padding: 5px;
+    padding: 2px;
+    height: 15vh;
     
 }
 
 .logo-container {
-    margin-bottom: 50px;
+    margin-bottom: 2px;
 }
 
 header img {
-    width: 30vh;
+    width: 18vh;
+    
    
+}
+
+header .control {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+}
+
+header .options{
+    display: flex;
+    gap: 1rem;
 }
 
 

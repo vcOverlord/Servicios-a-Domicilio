@@ -3,5 +3,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
+    background-image: url("./Assets/Masaje Thai2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+
+}
+
+.calendar img {
+    width: 100%;
+}
+
+
+
+.calendar h2 {
+   
+    color: rgb(101, 99, 99);
 }

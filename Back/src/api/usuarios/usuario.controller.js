@@ -5,7 +5,7 @@ const { setError } = require("../../helpers/errors");
 
 const getAllUsuarios = async (req, res, next) => {
     try {
-        const usuarios = await Usuario.find()
+        const usuarios = await Usuario.find().populate("citas");
         return res.status(200).json({
             message: 'All Usuarios',
             usuarios
@@ -19,7 +19,7 @@ const usuarioById = async (req, res, next) => {
   try {
       const { id } = req.params;
       if (id != req.usuario.id) return next(setError(403, "Forbidden"));
-      const usuario = await Usuario.findById(id);
+      const usuario = await Usuario.findById(id).populate("citas");
       if (!usuario) return next(setError(404, "Usuario not found"));
       return res.status(200).json(usuario);
   } catch (error) {
@@ -30,9 +30,9 @@ const usuarioById = async (req, res, next) => {
 const register = async (req, res, next) => {
   try {
       const newUsuario = new Usuario(req.body);
-      const usuarioNameExist = await Usuario.findOne({ name: newUsuario.name });
-      const emailExist = await Usuario.findOne({ email: newUsuario.email });
-      if (emailExist || usuarioNameExist) return next(setError(409, "this Email || Usuario name already exist"));
+   //   const usuarioNameExist = await Usuario.findOne({ name: newUsuario.name });
+   //   const emailExist = await Usuario.findOne({ email: newUsuario.email });
+   //   if (emailExist || usuarioNameExist) return next(setError(409, "this Email || Usuario name already exist"));
       const usuarioInDb = await newUsuario.save();
       res.status(201).json(usuarioInDb);
   } catch (error) {

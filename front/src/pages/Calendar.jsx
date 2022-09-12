@@ -1,9 +1,14 @@
+import "./Calendar.css";
+
+
+
 const Calendar = () => {
     return (
-      <div>
+      
         <section className="calendar">
-          <label htmlFor="start"><h3>Selecciona una fecha:</h3></label>
-
+          
+          <label htmlFor="start"><h2>Selecciona una fecha:</h2></label>
+          
             <input type="date" 
              id="start" 
              name="trip-start" 
@@ -12,7 +17,7 @@ const Calendar = () => {
              max="2018-12-31" />
 
         </section>
-      </div>
+  
     )
 };
 

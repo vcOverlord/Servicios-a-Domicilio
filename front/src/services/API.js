@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const APIHeaders = {
-    Accept: "application/json",
+    "Accept": "application/json",
     "Contect-Type": "application/json",
     "Access-Control-Allow-Origin":"*",
     Authorization: {

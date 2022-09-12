@@ -1,8 +1,15 @@
 footer {
-    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(171, 170, 170);
+    color: #4ac5e3;
+    min-height: 10vh;
+
+
+}
+
+p {
+    color: rgb(61, 59, 59);
+    font-weight: bold;
 
 }
