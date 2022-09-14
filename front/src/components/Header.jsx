@@ -1,17 +1,20 @@
 import "./Header.css";
 import { useContext } from "react";
 import { JwtContext } from "../context/jwtContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const Header = () => {
   const {usuario, logout} = useContext (JwtContext);
+  let navigate = useNavigate();
+
     return (
     <header>
       <nav> 
         <img className="logo" src="./assets/Logo nukiro.jpg" alt="logo"/>
         <div className="control">
         {usuario ? ( <><p>Welcome {usuario.name}</p>
-        <button onClick={() => logout ()}>Logout</button> 
+        <button onClick={() => logout () & navigate("/login")}>Logout</button> 
           </>
         
     ) : (

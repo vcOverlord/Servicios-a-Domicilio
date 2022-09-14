@@ -35,7 +35,10 @@ header .options{
     gap: 1rem;
 }
 
-
+header p {
+    color: rgb(61, 59, 59);
+    font-weight: bold;
+}
 
 
 

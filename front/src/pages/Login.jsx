@@ -22,8 +22,8 @@ const Login = () => {
             navigate("/calendar")
             }
             
-        })
-    }
+        });
+    };
 
 
     return (
@@ -37,7 +37,7 @@ const Login = () => {
         <button type="submit">Login</button>
     </form>
     </section>
-    )
+    );
 };
 
 export default Login

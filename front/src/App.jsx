@@ -4,13 +4,12 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Calendar from "./pages/Calendar";
-import Availability from "./pages/Availability";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import Booking from "./pages/Booking";
+import Confirming from "./pages/Confirming";
 import Confirmed from "./pages/Confirmed";
-import MyBookings from "./pages/MyBookings";
-import EditBookings from "./pages/EditBookings"
+import Booking from "./pages/Booking";
+import RequireAuth from "./components/RequiredAuth";
 
 
 
@@ -25,11 +24,11 @@ const App = () => {
            <Route path="/register" element={<Register/>} />
            <Route path="/login" element={<Login/>} />
            <Route path="/calendar" element={<Calendar/>} />
-           <Route path="/availability" element={<Availability/>} />
-           <Route path="/booking" element={<Booking/>} />
-           <Route path="/confirmed" element={<Confirmed/>} />
-           <Route path="/mybookings" element={<MyBookings/>} />
-           <Route path="/editbookings" element={<EditBookings/>} />
+           <Route path="/confirming" element={<Confirming/>} />
+           <Route path="/confirmed" element={<RequireAuth><Confirmed/></RequireAuth>} />
+           <Route path="/booking" element={<RequireAuth><Booking/></RequireAuth>} />
+          
+
           
         </Routes>
       <Footer />

@@ -6,7 +6,7 @@ const Home = () => {
 
       <section className="home">
         <h1>¡Bienvenid@s a Nukiro Masajes!</h1>
-        <Link to="/account">Reserva tu sesión a domicilio</Link>
+        <Link to="/register">Reserva tu sesión a domicilio</Link>
 
       </section>
        

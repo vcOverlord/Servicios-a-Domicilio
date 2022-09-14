@@ -5,11 +5,12 @@ const { setError } = require("../../helpers/errors");
 
 const getAllCitas = async (req, res, next) => {
     try {
+        
         const citas = await Cita.find().populate("usuarios admins").sort({ createdAt: "desc" });
         return res.status(200).json({
             message: 'All Citas',
             citas
-        })
+        });
     } catch (error) {
         return next(setError(500, error.message | 'Failed recovering all citas'));
     }

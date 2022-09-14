@@ -16,18 +16,20 @@ export const JwtContextProvider = ({children}) => {
         return initialValue || null
     });
 
+    const [editingBooking, setEditingBooking] = useState ({})
+
     const logout = () => {
         setUsuario(null);
         setAdmin(null);
         setJwt(null);
-
         localStorage.removeItem("usuario admin");
         localStorage.removeItem("token");
+        navigate("/");
 
     }
 
     return (
-    <JwtContext.Provider value={{jwt, setJwt, usuario, setUsuario, admin, setAdmin, logout}}>
+    <JwtContext.Provider value={{jwt, setJwt, usuario, setUsuario, admin, setAdmin, logout, editingBooking, setEditingBooking }}>
         {children}
     </JwtContext.Provider>
 

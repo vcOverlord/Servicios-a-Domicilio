@@ -8,8 +8,6 @@ const schema = new Schema ({
     email: {type: String, required: false},
     password: {type: String, required: true},
     mobile: {type: String, required: false},
-    address: {type: String, required: false},
-    issue: {type: String, required: false},
  //   cita: [{ type: Schema.Types.ObjectId, ref:"citas"}],
 });
 
