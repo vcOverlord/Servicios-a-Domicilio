@@ -10,6 +10,7 @@ footer {
 
 footer p {
     color: rgb(61, 59, 59);
-    font-weight: bold;
+    font-weight: bolder;
+    font-style: italic;
 
 }

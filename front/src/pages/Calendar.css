@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 0.5rem;
     background-image: url("./Assets/calendar.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -14,12 +14,31 @@
 .calendar form {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
+    gap: 0.1rem;
     font-weight: bold;
     color: rgb(92, 90, 90);
     width: 12rem;
 }
 
-h2 {
-    color:  rgb(81, 79, 79);
+.calendar h2 {
+    color:  rgb(93, 92, 92);
 }
+
+.calendar button {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    text-align: center;
+
+  
+}
+
+.calendar .button2 {
+   
+
+
+}
+.swal {
+
+    color: red;
+}
+

@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { API } from "../services/API";
 import { Link } from "react-router-dom";
-
 import "./Register.css";
 
 const Register = () => {
@@ -31,8 +30,7 @@ const Register = () => {
         <input type="text" id="email" name="email" {...register("email")} />
         <label htmlFor="password">Contraseña</label>
         <input type="password" id="password" name="password" {...register("password")} />
-        <label htmlFor="mobile">Teléfono</label>
-        <input type="number" id="mobile" name="mobile" {...register("mobile")} />
+       
 
         <button type="submit">Regístrate</button>
         

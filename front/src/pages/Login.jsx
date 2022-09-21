@@ -20,6 +20,7 @@ const Login = () => {
             setUsuario(res.data.usuarioInDb);
             if (res.data.token) {
             navigate("/calendar")
+            
             }
             
         });
@@ -28,10 +29,12 @@ const Login = () => {
 
     return (
     <section className="login">
+        
         <h2>Please log in:</h2>
+      
     <form onSubmit={handleSubmit(formSubmit)}>
-        <label htmlFor="name">Email</label>
-        <input type="text" id="email" name="email" {...register("email")} />
+        <label htmlFor="email">Email</label>
+        <input type="email" id="email" name="email" {...register("email")} />
         <label htmlFor="password">Password</label>
         <input type="password" id="password" name="password" {...register("password")} />
         <button type="submit">Login</button>

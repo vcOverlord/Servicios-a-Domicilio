@@ -9,28 +9,27 @@
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
+    min-height: 75vh;
   
     
   }
 
- 
 
-  
 
   .home h1{
-    color: gray;
+    color: rgb(113, 112, 112);
     font-size: 30px ;
   }
 
 
  .home a{
   font-size: 25px;
-  color: grey;
+  color: rgb(113, 112, 112);
  }
 
  .home a:hover {
-  color: #4ac5e3;
+  color: #40a7c1;
   padding: 2px 0;
-  border-bottom: 2px solid #4ac5e3;
+  border-bottom: 2px solid #40a7c1;
 }
 

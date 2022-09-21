@@ -6,15 +6,21 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const {usuario, logout} = useContext (JwtContext);
-  let navigate = useNavigate();
+  let navigate = useNavigate(); 
+  const handleLogout = () => {
+    
+     logout ();
+     navigate ("/login"); console.log (navigate);
 
+  }
     return (
     <header>
       <nav> 
         <img className="logo" src="./assets/Logo nukiro.jpg" alt="logo"/>
         <div className="control">
+        <Link to="/booking">Mis citas</Link>
         {usuario ? ( <><p>Welcome {usuario.name}</p>
-        <button onClick={() => logout () & navigate("/login")}>Logout</button> 
+        <button onClick={() => handleLogout () }>Logout</button> 
           </>
         
     ) : (

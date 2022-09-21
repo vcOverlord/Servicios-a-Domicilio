@@ -1,6 +1,8 @@
 .searchbar {
-    width: 20vw;
+    width: 25vw;
     height: 2rem;
     padding: 0.5rem;
     border-radius: 0.2rem;
+    margin-top: 0.8rem;    
 }
+

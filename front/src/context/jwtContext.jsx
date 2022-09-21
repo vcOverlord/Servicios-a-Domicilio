@@ -1,18 +1,26 @@
 import { useState, createContext } from "react";
 
+
 export const JwtContext = createContext();
 
 export const JwtContextProvider = ({children}) => {
+   
     const [jwt, setJwt] = useState(() => {
         const savedJwt = localStorage.getItem("token");
         return savedJwt || null;
     });
 
 
-    const [ usuario, setUsuario, admin, setAdmin] = useState(() => {
-        const savedUsuario = localStorage.getItem("usuario");
+    const [ usuario, setUsuario] = useState(() => {
+        const savedUsuario = localStorage.getItem("usuario");      
+        const initialValue = JSON.parse(savedUsuario);
+        return initialValue || null
+    });
+
+
+    const [ admin, setAdmin] = useState(() => {
         const savedAdmin = localStorage.getItem("admin");
-        const initialValue = JSON.parse(savedUsuario, savedAdmin);
+        const initialValue = JSON.parse(savedAdmin);
         return initialValue || null
     });
 
@@ -22,9 +30,10 @@ export const JwtContextProvider = ({children}) => {
         setUsuario(null);
         setAdmin(null);
         setJwt(null);
-        localStorage.removeItem("usuario admin");
+        localStorage.removeItem("usuario");
+        localStorage.removeItem("admin");
         localStorage.removeItem("token");
-        navigate("/");
+       
 
     }
 

@@ -8,14 +8,15 @@ const schema = new Schema ({
     date: {type: String, required: false},
     time: {type: Number, required: false},
     address: {type: String, required: false},
+    mobile: {type: String, required: false},
     amount: {type: Number, required: false},
     issue: {type: String, required: false},
-    usuario: [{ type: Schema.Types.ObjectId, ref:"usuarios"}],
-    admin: [{ type: Schema.Types.ObjectId, ref:"admins"}],
+    usuario: { type: Schema.Types.ObjectId, ref:"usuarios"},
+    admin: { type: Schema.Types.ObjectId, ref:"admins"},
 },
 
 {
-  timestamps: false,
+  timestamps: true,
 }
 
 );

@@ -12,6 +12,8 @@
 
 a{
   text-decoration: none;
+  font-weight: bold;
+  color: rgb(74, 73, 73);
  
 }
 
@@ -75,3 +77,6 @@ button {
   
 }
 
+form {
+  color: rgb(63, 61, 61)
+}

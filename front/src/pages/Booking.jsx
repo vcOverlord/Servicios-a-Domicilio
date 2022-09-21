@@ -9,11 +9,10 @@ import "./Booking.css";
 const Booking = () => {
     const [allBookings, setAllBookings] = useState([]);
     const [filterWord, setFilterWord] = useState("");
-
-    const filteredBookings = allBookings.filter ((booking) =>
+    
+    const filteredBookings = allBookings.filter((booking) =>
     booking.name.toLowerCase().includes(filterWord) ||
     booking.date.toLowerCase().includes(filterWord) ||
-    booking.time.toLowerCase().includes(filterWord) ||
     booking.address.toLowerCase().includes(filterWord) 
 
     )
@@ -22,6 +21,7 @@ const Booking = () => {
 const getAllBookings = async () => {
     API.get("/citas").then((resCita) => {
     setAllBookings(resCita.data.citas);
+    console.log(allBookings);
     });
     }; 
 
@@ -45,7 +45,7 @@ const getAllBookings = async () => {
         }
         </div>
        
-        {!filteredBookings.lenght ? <p>No se ha encontrado la cita</p> : null}
+        {!filteredBookings.length ? <p>No se ha encontrado la cita</p> : null}
 
     </section>
 

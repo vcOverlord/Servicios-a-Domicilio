@@ -1,0 +1,19 @@
+.bookingcard {
+    width: 250px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.8rem;
+    text-align: left;
+    background-color: rgb(247, 241, 241);
+    border-radius: 0.5rem;
+    margin-top: 3.5rem;
+    
+  }
+
+  .bookingcard button {
+    margin-top: 0.2rem;
+   
+}
+ 

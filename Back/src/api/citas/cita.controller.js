@@ -6,7 +6,7 @@ const { setError } = require("../../helpers/errors");
 const getAllCitas = async (req, res, next) => {
     try {
         
-        const citas = await Cita.find().populate("usuarios admins").sort({ createdAt: "desc" });
+        const citas = await Cita.find().populate("usuario admin").sort({ createdAt: "desc" });
         return res.status(200).json({
             message: 'All Citas',
             citas
@@ -19,7 +19,7 @@ const getAllCitas = async (req, res, next) => {
 const citaById = async (req, res, next) => {
     try {
         const { id } = req.params;
-        const cita = await Cita.findById(id).populate("usuarios admins");
+        const cita = await Cita.findById(id)
         if (!cita) {
           return next(setError(404, "Cita not found"))  
         } return res.status(200).json ({
