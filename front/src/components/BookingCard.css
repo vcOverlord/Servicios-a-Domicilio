@@ -9,6 +9,7 @@
     background-color: rgb(247, 241, 241);
     border-radius: 0.5rem;
     margin-top: 3.5rem;
+    flex-wrap: wrap;
     
   }
 

@@ -24,7 +24,7 @@ const Register = () => {
     <h2>Por favor, regístrate:</h2>
     
     <form onSubmit={handleSubmit(formSubmit)}>
-        <label htmlFor="name">Nombre completo</label>
+        <label htmlFor="name">Nombre</label>
         <input type="text" id="name" name="name" {...register("name")} />
         <label htmlFor="email">Email</label>
         <input type="text" id="email" name="email" {...register("email")} />

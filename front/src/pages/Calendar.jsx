@@ -4,6 +4,8 @@ import { API } from "../services/API";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
+import { useContext } from "react";
+import { JwtContext } from "../context/jwtContext";
 import "./Calendar.css";
 
 
@@ -12,10 +14,12 @@ const Calendar = () => {
  const [allBookings, setAllBookings] = useState([]); 
  const [book, setBook] = useState([]);
  const [correctDate, setCorrectDate] = useState (true);
+ const {usuario} = useContext (JwtContext);
 
 
   const { register, handleSubmit } = useForm();
   let navigate = useNavigate();
+  let timerInterval
   const getAllBookings = async () => {
     API.get("/citas").then((resCita) => {
     setAllBookings(resCita.data.citas);
@@ -49,7 +53,17 @@ const Calendar = () => {
          }
       });
      
-    }; 
+    };
+    
+    const travelBooking = () => {
+      navigate("/booking")
+      
+
+    }
+
+    const travelCalendar = () => {
+    window.location.reload ()
+    }
 
 
     if ( confirming ) { 
@@ -58,14 +72,37 @@ const Calendar = () => {
           <h2>¿Quieres confirmar la cita?</h2>
           
           
-          <button  onClick={()=> navigate("/booking") 
-          (Swal.fire("Reserva confirmada. Puedes cambiar tu cita hasta 12h antes de la sesión. Muchas gracias",
-          ))}>SI</button>
+          <button  onClick={()=> 
+          Swal.fire("Reserva confirmada. Puedes cambiar tu cita hasta 12h antes de la sesión. Muchas gracias"
+          ) & travelBooking() }>SI</button>
           
          
 
-          <button onClick={()=> navigate("/calendar")
-           (Swal.fire("Reserva anulada. Por favor, rellena el formulario si deseas volver a solicitar cita. Gracias"))}>NO</button>
+          <button onClick={()=>
+          Swal.fire({
+            title: 'Reserva anulada',
+            html: 'Por favor, rellena el formulario si deseas volver a solicitar cita. Gracias.',
+            timer: 4000,
+            timerProgressBar: true,
+            didOpen: () => {
+              Swal.showLoading()
+              const b = Swal.getHtmlContainer().querySelector('b')
+              timerInterval = setInterval(() => {
+                b.textContent = Swal.getTimerLeft()
+              }, 100)
+            },
+            willClose: () => {
+              clearInterval(timerInterval)
+            }
+          }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) {
+             window.location.reload ()
+            }
+          })
+          
+
+          }>NO</button>
           
 
         
@@ -81,7 +118,7 @@ const Calendar = () => {
           <label htmlFor="start"><h2>Solicita tu reserva:</h2></label>
 
               <form onSubmit={handleSubmit(formSubmit)}>
-                {!correctDate ? <p>Fecha mal</p> : null }
+                {!correctDate ? <p></p> : null }
                 <label htmlFor="name">Nombre</label>
                 <input type="text" id="name" name="name" required {...register("name")} />
                 <label htmlFor="date">Fecha</label>
@@ -95,7 +132,8 @@ const Calendar = () => {
                 <label htmlFor="amount">Cantidad</label>
                 <input type="number" id="amount" name="amount" required min={1} max={4} {...register("amount")} />
                 <label htmlFor="issue">Motivo</label>
-                <input type="text" id="issue" name="issue" required max={25} {...register("issue")}/>
+                <input type="text" id="issue" name="issue" required maxLength={25} placeholder="Max.35 caracteres" {...register("issue")}/>
+                <input type="hidden" value={usuario?._id} {...register("usuario")} />
                 <button type="submit">Confirmar</button>
                
               </form>

@@ -4,10 +4,11 @@
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    background-image: url("./Assets/calendar.png");
+    background-image: url("https://res.cloudinary.com/diudwa5sx/image/upload/v1663919843/nukiro/calendar_zq3zvy.png");
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
+   
 
 }
 
@@ -22,23 +23,19 @@
 
 .calendar h2 {
     color:  rgb(93, 92, 92);
+    align-items: center;
 }
 
 .calendar button {
     margin-top: 0.8rem;
     font-size: 0.9rem;
     text-align: center;
-
   
 }
 
-.calendar .button2 {
+
    
 
 
-}
-.swal {
 
-    color: red;
-}
 
